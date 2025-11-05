@@ -1,0 +1,19 @@
+@import url(@assets/fonts/fonts.css);
+:root {
+  /*--bg-color: #ffffff;
+  --text-color: #111111;*/
+  --bg-main-color: white;
+  --main-color: black;
+
+  --primary-color: #7D48F0;
+  --dark-color: #130D1B;
+
+  --primary-gradient: linear-gradient(270deg, #281453, #7D48F0);
+
+  /*--bottom-gradient: linear-gradient(90deg, #ffffff 0%, #ffffff 20%, #7D48F0 50%);*/
+
+  --gray-color: #111111;
+
+  --primary-font-family: 'Montserrat', sans-serif;
+
+}

@@ -1,0 +1,25 @@
+h1 {
+  font-family: var(--primary-font-family);
+  font-weight: 600; 
+  font-size: 28px;
+}
+h2 {
+  font-family: var(--primary-font-family);
+  font-weight: 600; 
+  font-size: 24px;
+}
+h3 {
+  font-family: var(--primary-font-family);
+  font-weight: 600; 
+  font-size: 18px;
+}
+h4 {
+  font-family: var(--primary-font-family);
+  font-weight: 600; 
+  font-size: 14px;
+}
+p {
+  font-family: var(--primary-font-family);
+  font-weight: 600; 
+  font-size: 18px;
+}
