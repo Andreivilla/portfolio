@@ -1,0 +1,95 @@
+'use client';
+
+import { useState, useEffect } from 'react';
+import { FiMenu } from 'react-icons/fi';
+
+export default function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <header
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        scrolled ? 'bg-black/90 backdrop-blur-sm py-4' : 'bg-transparent py-8'
+      }`}
+    >
+      <div
+        className={`${
+          scrolled
+            ? 'flex items-center justify-between px-8'
+            : 'flex flex-col items-end px-8'
+        }`}
+      >
+        <div
+          className={`text-white font-bold text-xl tracking-widest select-none ${
+            scrolled ? '' : 'self-start ml-2 mb-4'
+          }`}
+        >
+          A<span className="text-gray-400">V</span>
+        </div>
+
+        {!scrolled && (
+          <nav className="flex flex-col space-y-2 text-sm text-right">
+            <a href="#home" className="hover:text-green-400 transition">
+              Home
+            </a>
+            <a href="#sobre" className="hover:text-green-400 transition">
+              Sobre
+            </a>
+            <a href="#projects" className="hover:text-blue-400 transition">
+              projects
+            </a>
+            <a href="#about" className="hover:text-purple-400 transition">
+              about
+            </a>
+            <a href="#contact" className="hover:text-red-400 transition">
+              contact
+            </a>
+          </nav>
+        )}
+
+        {scrolled && (
+          <button
+            className="text-white text-2xl"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            <FiMenu />
+          </button>
+        )}
+      </div>
+
+      {menuOpen && scrolled && (
+        <nav className="flex flex-col bg-black/90 backdrop-blur-sm p-6 space-y-3 text-right text-sm absolute right-0 top-full shadow-lg">
+          <a href="#home" className="hover:text-gray-400 transition">
+            Home
+          </a>
+          <a href="#sobre" className="hover:text-gray-400 transition">
+            about
+          </a>
+          <a href="#work" className="hover:text-gray-400 transition">
+            work
+          </a>
+          <a href="#projectos" className="hover:text-gray-400 transition">
+            projects
+          </a>
+
+          <a href="#contact" className="hover:text-gray-400 transition">
+            contact
+          </a>
+        </nav>
+      )}
+    </header>
+  );
+}
