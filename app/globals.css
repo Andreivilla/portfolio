@@ -11,7 +11,7 @@
   --color-foreground: var(--foreground);
   --font-sans: 'Fira Code', monospace;
   --font-mono: 'Fira Code', monospace;
-
+  --text-tiny: 0.625rem;
   --animate-blink: blink 1s step-start infinite;
   @keyframes blink {
     '0%, 100%' {

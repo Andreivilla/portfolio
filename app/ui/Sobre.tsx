@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-
+import { GuestLine, BlinkChar } from './Util';
 export function Resumo() {
   return (
     <>
@@ -14,7 +14,7 @@ export function Resumo() {
       </p>
       <br />
       <GuestLine>
-        <BlinkButton />
+        <BlinkChar />
       </GuestLine>
     </>
   );
@@ -41,21 +41,8 @@ export function Dados() {
 
       <p>Florianópolis SC</p>
       <GuestLine>
-        <BlinkButton />
+        <BlinkChar />
       </GuestLine>
     </>
   );
-}
-
-export function GuestLine({ children }: { children: ReactNode }) {
-  return (
-    <div className="flex flex-row gap-x-2">
-      <p className="text-green-600">guest</p>
-      <p className="text-blue-500">~ resumo</p>
-      {children}
-    </div>
-  );
-}
-function BlinkButton() {
-  return <span className="text-brand-white-200 animate-blink">█</span>;
 }

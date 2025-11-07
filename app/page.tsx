@@ -9,6 +9,8 @@ import { Window } from './ui/Window';
 import Image from 'next/image';
 import { Resumo, Dados } from './ui/Sobre';
 
+import Formacao from './ui/Formacao';
+
 export default function Home() {
   const baseUrl = process.env.BASE_URL;
   return (
@@ -48,7 +50,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="sobre" className="min-h-screen px-12 scroll-mt-20">
+      <section id="sobre" className="px-12 scroll-mt-20">
         <h2 className="text-3xl font-bold mb-4">Sobre</h2>
         <div className="flex flex-col md:flex-row gap-2">
           <Window title="resumo">
@@ -61,7 +63,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="projetos"></section>
+      <section id="projetos" className="px-12 mt-10 scroll-mt-20 mb-100">
+        <h2 className="text-3xl font-bold mb-4">Formação</h2>
+        <Formacao />
+      </section>
     </div>
   );
 }
