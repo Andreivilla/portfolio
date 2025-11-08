@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 export function GuestLine({ children }: { children: ReactNode }) {
   return (
     <div className="flex flex-row gap-x-2">

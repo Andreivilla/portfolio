@@ -1,5 +1,5 @@
 import { UdescLogo } from './AsciiArt';
-import { Window } from './Window';
+import { Window } from './Windows';
 import { GuestLine, BlinkChar } from './Util';
 
 export default function Formacao() {

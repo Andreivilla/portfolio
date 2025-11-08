@@ -5,7 +5,7 @@ import { FaLinkedinIn } from 'react-icons/fa';
 import { FaGithub } from 'react-icons/fa';
 import { IoDocumentTextSharp } from 'react-icons/io5';
 
-import { Window } from './ui/Window';
+import { Window } from './ui/Windows';
 import Image from 'next/image';
 import { Resumo, Dados } from './ui/Sobre';
 
@@ -13,6 +13,8 @@ import Formacao from './ui/Formacao';
 
 export default function Home() {
   const baseUrl = process.env.BASE_URL;
+  const sobre = ['sobre', 'sobre'];
+
   return (
     <div className="flex flex-col">
       <section
@@ -63,9 +65,14 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="projetos" className="px-12 mt-10 scroll-mt-20 mb-100">
+      <section id="projetos" className="px-12 mt-10 scroll-mt-20">
         <h2 className="text-3xl font-bold mb-4">Formação</h2>
         <Formacao />
+      </section>
+
+      <section id="projetos" className="px-12 mt-10 scroll-mt-20 mb-100">
+        <h2 className="text-3xl font-bold mb-4">Experiencia proficional</h2>
+        
       </section>
     </div>
   );
