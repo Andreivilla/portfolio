@@ -2,22 +2,26 @@
 
 import { useState, useEffect } from 'react';
 import { FiMenu } from 'react-icons/fi';
+import { usePathname } from 'next/navigation';
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+
+  const pathname = usePathname();
+  const [scrolled, setScrolled] = useState(pathname.includes('work'));
 
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
         setScrolled(true);
       } else {
-        setScrolled(false);
+        setScrolled(pathname.includes('work'));
       }
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [pathname]);
 
   return (
     <header
@@ -42,14 +46,23 @@ export default function Navbar() {
 
         {!scrolled && (
           <nav className="flex flex-col space-y-2 text-sm text-right">
-            <a href="#home" className="hover:text-green-400 transition">
+            <a
+              href={baseUrl + '#home'}
+              className="hover:text-green-400 transition"
+            >
               Home
             </a>
-            <a href="#sobre" className="hover:text-green-400 transition">
+            <a
+              href={baseUrl + '/#sobre'}
+              className="hover:text-green-400 transition"
+            >
               Sobre
             </a>
-            <a href="#projects" className="hover:text-blue-400 transition">
-              projects
+            <a
+              href={baseUrl + '/#trabalhos'}
+              className="hover:text-blue-400 transition"
+            >
+              trabalhos
             </a>
             <a href="#about" className="hover:text-purple-400 transition">
               about

@@ -1,20 +1,21 @@
+import type { Work } from './lib/definitions';
+import { TechIcon } from './ui/TechIcons';
 import Footer from './ui/Footer';
 import Link from 'next/link';
-
 import { FaLinkedinIn } from 'react-icons/fa';
 import { FaGithub } from 'react-icons/fa';
 import { IoDocumentTextSharp } from 'react-icons/io5';
-
 import { Window } from './ui/Windows';
 import Image from 'next/image';
 import { Resumo, Dados } from './ui/Sobre';
-
 import Formacao from './ui/Formacao';
+import { WorkWindow } from './ui/Windows';
 
-export default function Home() {
-  const baseUrl = process.env.BASE_URL;
-  const sobre = ['sobre', 'sobre'];
+export default async function Home() {
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
+  const res = await fetch(`${baseUrl}/works/works.json`);
+  const works: Work[] = await res.json();
   return (
     <div className="flex flex-col">
       <section
@@ -23,18 +24,17 @@ export default function Home() {
       >
         <div>
           <div>
-            <p className="text-gray-400 italic">// Andrei Villa </p>
+            <p className="text-zinc-500 italic">// Andrei Villa </p>
             <h1 className="text-6xl font-extrabold mt-2">
               Dev <br />
               Full-Stack
             </h1>
           </div>
           <div className="w-full h-100 relative">
-            <Image
+            <img
               src={baseUrl + '/perfil-pixel.gif'}
               alt="Andrei Villa"
-              layout="fill"
-              className="object-contain"
+              className="w-full h-full object-contain"
             />
           </div>
         </div>
@@ -70,9 +70,40 @@ export default function Home() {
         <Formacao />
       </section>
 
-      <section id="projetos" className="px-12 mt-10 scroll-mt-20 mb-100">
+      <section id="trabalhos" className="px-12 mt-10 scroll-mt-20 mb-100">
         <h2 className="text-3xl font-bold mb-4">Experiencia proficional</h2>
-        
+        <div className="flex flex-col gap-4 ">
+          {works.map((work) => (
+            <div
+              className="flex flex-col md:flex-row gap-4 flex-1/2"
+              key={work.nome}
+            >
+              <WorkWindow work={work} />
+
+              <div className="flex flex-col flex-1/2">
+                <h2 className="text-2xl mt-2 md:mt-0">{work.nome}</h2>
+
+                <div className="flex gap-2 text-zinc-500">
+                  <span>{work.inicio}</span>
+                  <span>{work.fim}</span>
+                  <span>{work.cargo}</span>
+                </div>
+
+                <div>
+                  <p>{work.coverDescription}</p>
+                </div>
+
+                <div className="flex gap-2 mt-2">
+                  {work.techs.map((tech) => (
+                    <div key={tech}>
+                      <TechIcon name={tech} />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </section>
     </div>
   );

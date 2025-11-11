@@ -1,7 +1,12 @@
 export type Work = {
   nome: string;
-  imagens: string[];
+  coverImage: string;
+  imagens?: string[];
   inicio: string;
   fim: string;
   techs: string[];
+  cargo: string;
+  coverDescription: string;
+  description: string;
+  empresa: string;
 };
