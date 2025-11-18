@@ -10,6 +10,7 @@ import Image from 'next/image';
 import { Resumo, Dados } from './ui/Sobre';
 import Formacao from './ui/Formacao';
 import { WorkWindow } from './ui/Windows';
+import Contact from './ui/Contact';
 
 export default async function Home() {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
@@ -104,6 +105,10 @@ export default async function Home() {
             </div>
           ))}
         </div>
+      </section>
+
+      <section>
+        <Contact />
       </section>
     </div>
   );
