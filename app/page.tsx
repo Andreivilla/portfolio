@@ -8,12 +8,11 @@ import { Window } from './ui/Windows';
 import { Resumo, Dados } from './ui/Sobre';
 import Formacao from './ui/Formacao';
 import { WorkWindow } from './ui/Windows';
-import Contact from './ui/Contact';
+import { MdEmail } from 'react-icons/md';
 
 export default async function Home() {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
-  
   const res = await fetch(`${baseUrl}/works/works.json`);
   const works: Work[] = await res.json();
   return (
@@ -40,13 +39,28 @@ export default async function Home() {
         </div>
 
         <div className="flex gap-2 mb-20 md:mb-12">
-          <Link href="https://www.linkedin.com/in/andrei-villa-7729801b6/">
+          <Link
+            href="https://www.linkedin.com/in/andrei-villa-7729801b6/"
+            className="hover:text-blue-500"
+          >
             <FaLinkedinIn className="w-8 h-8" />
           </Link>
-          <Link href="https://github.com/Andreivilla">
+          <Link
+            href="https://github.com/Andreivilla"
+            className="hover:text-red-500"
+          >
             <FaGithub className="w-8 h-8" />
           </Link>
-          <Link href="">
+          <Link
+            href="mailto:andreivilla63@gmail.com"
+            className="hover:text-green-500"
+          >
+            <MdEmail className="w-8 h-8" />
+          </Link>
+          <Link
+            href="https://docs.google.com/document/d/1scktStG5dNYYbukg_sInGC5IOoLUo0M4padytpNsEag/edit?usp=sharing"
+            className="hover:text-yellow-500"
+          >
             <IoDocumentTextSharp className="w-8 h-8" />
           </Link>
         </div>
@@ -70,7 +84,7 @@ export default async function Home() {
         <Formacao />
       </section>
 
-      <section id="trabalhos" className="px-12 mt-10 scroll-mt-20 mb-100">
+      <section id="trabalhos" className="px-12 mt-10 scroll-mt-20">
         <h2 className="text-3xl font-bold mb-4">Experiencia proficional</h2>
         <div className="flex flex-col gap-4 ">
           {works.map((work) => (
@@ -106,8 +120,48 @@ export default async function Home() {
         </div>
       </section>
 
-      <section>
-        <Contact />
+      <section id="contato" className="px-12 mt-10 scroll-mt-20">
+        <h2 className="text-3xl font-bold mb-4">Contato</h2>
+        <div className="md:flex md:gap-4">
+          <Link
+            href="https://www.linkedin.com/in/andrei-villa-7729801b6/"
+            className="flex items-center justify-center w-full py-3 mt-4 text-lg text-white 
+          transition-colors duration-300 bg-black border border-white rounded-md 
+          hover:border-blue-500 focus:outline-none hover:text-blue-500
+          focus:ring-2 "
+          >
+            <FaLinkedinIn className="w-5 h-5 mr-1" />
+            linkedin
+          </Link>
+          <Link
+            href="https://github.com/Andreivilla"
+            className="flex items-center justify-center w-full py-3 mt-4 text-lg text-white 
+          transition-colors duration-300 bg-black border border-white rounded-md 
+          hover:border-red-500 focus:outline-none hover:text-red-500
+          focus:ring-2 "
+          >
+            <FaGithub className="w-8 h-8 mr-1" />
+            Github
+          </Link>
+          <Link
+            href="mailto:andreivilla63@gmail.com"
+            className="flex items-center justify-center w-full py-3 mt-4 text-lg text-white 
+          transition-colors duration-300 bg-black border border-white rounded-md 
+          hover:border-green-500 focus:outline-none hover:text-green-500
+          focus:ring-2 "
+          >
+            <MdEmail className="w-8 h-8 mr-1" /> Email
+          </Link>
+          <Link
+            href="https://docs.google.com/document/d/1scktStG5dNYYbukg_sInGC5IOoLUo0M4padytpNsEag/edit?usp=sharing"
+            className="flex items-center justify-center w-full py-3 mt-4 text-lg text-white 
+          transition-colors duration-300 bg-black border border-white rounded-md 
+          hover:border-yellow-500 focus:outline-none hover:text-yellow-500
+          focus:ring-2 "
+          >
+            <IoDocumentTextSharp className="w-8 h-8 mr-1" /> Curriculo
+          </Link>
+        </div>
       </section>
     </div>
   );
