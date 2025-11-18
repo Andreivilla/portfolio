@@ -30,13 +30,13 @@ export function UdescLogo() {
    ***************************    ++++++++++++     ********** 
     *************************                     ********** `;
   
-  const colorMap = {
+  const colorMap: Record<string, string> = {
     '-': '#189C52',
     '=': '#EF423A',
     '*': '#084A29',
     '+': '#C52929',
-  }
-  
+  };
+
   return (
     <div className="">
       <pre className="font-mono text-[0.4rem] sm:text-[0.625rem]  leading-none">

@@ -7,7 +7,7 @@ export default async function Page({
   params: Promise<{ name: string }>;
 }) {
   const { name } = await params; // 👈 precisa resolver a promise
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? '';
 
   const res = await fetch(`${baseUrl}/works/works.json`);
   const works: Work[] = await res.json();
