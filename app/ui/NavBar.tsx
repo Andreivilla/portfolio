@@ -26,14 +26,14 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? 'bg-black/90 backdrop-blur-sm py-4' : 'bg-transparent py-8'
+        scrolled ? 'backdrop-blur-sm py-2' : 'bg-transparent py-8'
       }`}
     >
       <div
         className={`${
           scrolled
-            ? 'flex items-center justify-between px-8'
-            : 'flex flex-col items-end px-8'
+            ? 'flex max-w-screen-xl mx-auto items-center justify-between px-8'
+            : 'flex max-w-screen-xl mx-auto flex-col items-end px-8'
         }`}
       >
         <div

@@ -39,7 +39,7 @@ export function UdescLogo() {
   
   return (
     <div className="">
-      <pre className="font-mono text-tiny leading-none">
+      <pre className="font-mono text-[0.4rem] sm:text-[0.625rem]  leading-none">
         {ascii.split('\n').map((line, i) => (
           <div key={i}>
             {line.split('').map((char, j) => {
