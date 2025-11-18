@@ -1,5 +1,6 @@
 import './globals.css';
 import Navbar from './ui/NavBar';
+import Footer from './ui/Footer';
 
 export const metadata = {
   title: 'Portfolio',
@@ -16,6 +17,7 @@ export default function RootLayout({
       <body className="bg-black text-white mx-auto max-w-screen-xl">
         <Navbar />
         <main className="pt-20">{children}</main>
+        <Footer />
       </body>
     </html>
   );
