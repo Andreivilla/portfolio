@@ -79,7 +79,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section id="projetos" className="px-12 mt-10 scroll-mt-20">
+      <section id="formacao" className="px-12 mt-10 scroll-mt-20">
         <h2 className="text-3xl font-bold mb-4">Formação</h2>
         <Formacao />
       </section>

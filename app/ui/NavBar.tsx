@@ -48,27 +48,33 @@ export default function Navbar() {
           <nav className="flex flex-col space-y-2 text-sm text-right">
             <a
               href={baseUrl + '#home'}
-              className="hover:text-green-400 transition"
+              className="hover:text-green-500 transition"
             >
               Home
             </a>
             <a
               href={baseUrl + '/#sobre'}
-              className="hover:text-green-400 transition"
+              className="hover:text-red-500 transition"
             >
               Sobre
             </a>
             <a
-              href={baseUrl + '/#trabalhos'}
-              className="hover:text-blue-400 transition"
+              href={baseUrl + '/#formacao'}
+              className="hover:text-blue-500 transition"
             >
-              trabalhos
+              Formação
             </a>
-            <a href="#about" className="hover:text-purple-400 transition">
-              about
+            <a
+              href={baseUrl + '/#trabalhos'}
+              className="hover:text-yellow-500 transition"
+            >
+              Trabalhos
             </a>
-            <a href="#contact" className="hover:text-red-400 transition">
-              contact
+            <a
+              href={baseUrl + '/#contato'}
+              className="hover:text-purple-500 transition"
+            >
+              Contato
             </a>
           </nav>
         )}
@@ -85,21 +91,35 @@ export default function Navbar() {
 
       {menuOpen && scrolled && (
         <nav className="flex flex-col bg-black/90 backdrop-blur-sm p-6 space-y-3 text-right text-sm absolute right-0 top-full shadow-lg">
-          <a href="#home" className="hover:text-gray-400 transition">
+          <a
+            href={baseUrl + '#home'}
+            className="hover:text-green-500 transition"
+          >
             Home
           </a>
-          <a href="#sobre" className="hover:text-gray-400 transition">
-            about
+          <a
+            href={baseUrl + '/#sobre'}
+            className="hover:text-red-500 transition"
+          >
+            Sobre
           </a>
-          <a href="#work" className="hover:text-gray-400 transition">
-            work
+          <a
+            href={baseUrl + '/#formacao'}
+            className="hover:text-blue-500 transition"
+          >
+            Formação
           </a>
-          <a href="#projectos" className="hover:text-gray-400 transition">
-            projects
+          <a
+            href={baseUrl + '/#trabalhos'}
+            className="hover:text-yellow-500 transition"
+          >
+            Trabalhos
           </a>
-
-          <a href="#contact" className="hover:text-gray-400 transition">
-            contact
+          <a
+            href={baseUrl + '/#contato'}
+            className="hover:text-purple-500 transition"
+          >
+            Contato
           </a>
         </nav>
       )}
