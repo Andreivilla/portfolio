@@ -1,12 +1,10 @@
 import type { Work } from './lib/definitions';
 import { TechIcon } from './ui/TechIcons';
-import Footer from './ui/Footer';
 import Link from 'next/link';
 import { FaLinkedinIn } from 'react-icons/fa';
 import { FaGithub } from 'react-icons/fa';
 import { IoDocumentTextSharp } from 'react-icons/io5';
 import { Window } from './ui/Windows';
-import Image from 'next/image';
 import { Resumo, Dados } from './ui/Sobre';
 import Formacao from './ui/Formacao';
 import { WorkWindow } from './ui/Windows';
@@ -15,6 +13,7 @@ import Contact from './ui/Contact';
 export default async function Home() {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
+  
   const res = await fetch(`${baseUrl}/works/works.json`);
   const works: Work[] = await res.json();
   return (
