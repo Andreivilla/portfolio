@@ -9,6 +9,6 @@ export type Work = {
   coverDescription: string;
   description: string;
   empresa: string;
-  repositorio?: string;
+  repositorio: string;
   site?: string;
 };

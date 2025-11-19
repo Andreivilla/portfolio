@@ -9,12 +9,16 @@ import { Resumo, Dados } from './ui/Sobre';
 import Formacao from './ui/Formacao';
 import { WorkWindow } from './ui/Windows';
 import { MdEmail } from 'react-icons/md';
+import { promises as fs } from 'fs';
+import path from 'path';
 
 export default async function Home() {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-  console.log(`base url: ${baseUrl}works/works.json`);
-  const res = await fetch(`${baseUrl}works/works.json`);
-  const works: Work[] = await res.json();
+
+  const filePath = path.join(process.cwd(), 'public', 'works', 'works.json');
+  const json = await fs.readFile(filePath, 'utf8');
+  const works: Work[] = JSON.parse(json);
+
   return (
     <div className="flex flex-col">
       <section

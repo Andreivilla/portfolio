@@ -1,16 +1,21 @@
 import { Work } from '@/app/lib/definitions';
 import { TechIcon } from '@/app/ui/TechIcons';
 import { BsGithub } from 'react-icons/bs';
+import { promises as fs } from 'fs';
+import path from 'path';
+
 export default async function Page({
   params,
 }: {
   params: Promise<{ name: string }>;
 }) {
-  const { name } = await params; // 👈 precisa resolver a promise
+  const { name } = await params;
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? '';
-  console.log(`base url: ${baseUrl}works/works.json`);
-  const res = await fetch(`${baseUrl}works/works.json`);
-  const works: Work[] = await res.json();
+
+  const filePath = path.join(process.cwd(), 'public', 'works', 'works.json');
+  const json = await fs.readFile(filePath, 'utf8');
+  const works: Work[] = JSON.parse(json);
+
   const work = works.find((work) => work.nome === decodeURIComponent(name));
 
   return (
@@ -62,7 +67,7 @@ export default async function Page({
         )}
         {work?.site && (
           <div className="inline-flex flex-1/2 items-center gap-2 rounded-md border border-zinc-500 p-4 w-auto">
-            <a href={work?.site} target="_blank" rel="noopener noreferrer">
+            <a href={work.site} target="_blank" rel="noopener noreferrer">
               Ver mais {'>'}_
             </a>
           </div>
