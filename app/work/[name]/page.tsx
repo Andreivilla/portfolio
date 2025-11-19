@@ -8,8 +8,8 @@ export default async function Page({
 }) {
   const { name } = await params; // 👈 precisa resolver a promise
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? '';
-
-  const res = await fetch(`${baseUrl}/works/works.json`);
+  console.log(`base url: ${baseUrl}works/works.json`);
+  const res = await fetch(`${baseUrl}works/works.json`);
   const works: Work[] = await res.json();
   const work = works.find((work) => work.nome === decodeURIComponent(name));
 

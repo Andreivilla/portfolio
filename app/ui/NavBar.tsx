@@ -53,25 +53,25 @@ export default function Navbar() {
               Home
             </a>
             <a
-              href={baseUrl + '/#sobre'}
+              href={baseUrl + '#sobre'}
               className="hover:text-red-500 transition"
             >
               Sobre
             </a>
             <a
-              href={baseUrl + '/#formacao'}
+              href={baseUrl + '#formacao'}
               className="hover:text-blue-500 transition"
             >
               Formação
             </a>
             <a
-              href={baseUrl + '/#trabalhos'}
+              href={baseUrl + '#trabalhos'}
               className="hover:text-yellow-500 transition"
             >
               Trabalhos
             </a>
             <a
-              href={baseUrl + '/#contato'}
+              href={baseUrl + '#contato'}
               className="hover:text-purple-500 transition"
             >
               Contato
@@ -98,25 +98,25 @@ export default function Navbar() {
             Home
           </a>
           <a
-            href={baseUrl + '/#sobre'}
+            href={baseUrl + '#sobre'}
             className="hover:text-red-500 transition"
           >
             Sobre
           </a>
           <a
-            href={baseUrl + '/#formacao'}
+            href={baseUrl + '#formacao'}
             className="hover:text-blue-500 transition"
           >
             Formação
           </a>
           <a
-            href={baseUrl + '/#trabalhos'}
+            href={baseUrl + '#trabalhos'}
             className="hover:text-yellow-500 transition"
           >
             Trabalhos
           </a>
           <a
-            href={baseUrl + '/#contato'}
+            href={baseUrl + '#contato'}
             className="hover:text-purple-500 transition"
           >
             Contato

@@ -12,8 +12,8 @@ import { MdEmail } from 'react-icons/md';
 
 export default async function Home() {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-
-  const res = await fetch(`${baseUrl}/works/works.json`);
+  console.log(`base url: ${baseUrl}works/works.json`);
+  const res = await fetch(`${baseUrl}works/works.json`);
   const works: Work[] = await res.json();
   return (
     <div className="flex flex-col">

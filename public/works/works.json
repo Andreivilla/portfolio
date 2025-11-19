@@ -1,8 +1,8 @@
 [
   {
     "nome": "Club de Afiliados",
-    "coverImage": "/works/aguia_sistemas/cover.png",
-    "imagens": ["/images/portfolio1.png", "/images/portfolio2.png"],
+    "coverImage": "works/aguia_sistemas/cover.png",
+    "imagens": ["images/portfolio1.png", "images/portfolio2.png"],
     "inicio": "11/2024",
     "fim": "05/2025",
     "cargo": "Estagiário",
@@ -13,8 +13,8 @@
   },
   {
     "nome": "Gerenciador de Restaurante",
-    "coverImage": "/works/aguia_sistemas/cover.png",
-    "imagens": ["/images/portfolio1.png", "/images/portfolio2.png"],
+    "coverImage": "works/aguia_sistemas/cover.png",
+    "imagens": ["images/portfolio1.png", "images/portfolio2.png"],
     "inicio": "11/2024",
     "fim": "05/2025",
     "cargo": "Estagiário",
